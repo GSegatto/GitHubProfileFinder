@@ -13,9 +13,14 @@ O projeto faz parte da minha jornada de aprendizado em Análise e Desenvolviment
 </br>
 ## Demonstração
 
-Acesse o repositório para conferir o código-fonte e acompanhar o desenvolvimento do projeto.
+Acesse a versão publicada do GitHubProfileFinder para testar a aplicação
+e explorar suas funcionalidades diretamente pelo navegador.
 
-🔗 [Acessar o GitHubProfileFinder](https://github.com/GSegatto/GitHubProfileFinder)
+🌐 [Acessar o GitHubProfileFinder](https://git-hub-profile-finder-gules.vercel.app/)
+
+O código-fonte do projeto também está disponível no GitHub.
+
+🔗 [Repositório GitHubProfileFinder](https://github.com/GSegatto/GitHubProfileFinder)
 </br>
 ## Funcionalidades
 
