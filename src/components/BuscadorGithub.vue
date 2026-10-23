@@ -1,7 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue'
 
-// Estado do formulário
 const busca = ref('')
 
 // Os três estados distintos da requisição + o dado
@@ -40,7 +39,7 @@ async function buscar() {
     busca.value = ''
 
   } catch (e) {
-    // Aqui só chegam falhas inesperadas (rede fora, rate limit, etc.)
+    // chegar falhas inesperadas (rede fora, rate limit, etc.)
     erro.value = 'Não foi possível consultar o GitHub agora. Tente novamente.'
     console.error(e)
   } finally {
@@ -76,13 +75,11 @@ async function buscar() {
         </button>
       </form>
 
-      <!-- Carregamento -->
       <p v-if="carregando" class="status" role="status">
         <span class="spinner" aria-hidden="true"></span>
         Buscando perfil...
       </p>
 
-      <!-- Usuário não encontrado -->
       <p
         v-else-if="naoEncontrado"
         class="status aviso"
@@ -92,13 +89,11 @@ async function buscar() {
         Confira o nome e tente novamente.
       </p>
 
-      <!-- Erro de conexão ou API -->
       <p v-else-if="erro" class="status erro" role="alert">
         {{ erro }}
       </p>
     </section>
 
-    <!-- Perfil encontrado -->
     <article v-if="perfil" class="card">
       <img
         :src="perfil.avatar_url"
@@ -142,7 +137,6 @@ async function buscar() {
 
 <style scoped>
 
-/* Fundo da página inteira */
 :global(body) {
   margin: 0;
   min-width: 320px;
@@ -165,7 +159,6 @@ async function buscar() {
   box-sizing: border-box;
 }
 
-/* Centralização do conteúdo */
 .pagina {
   width: 100%;
   min-height: 100vh;
@@ -179,7 +172,6 @@ async function buscar() {
   gap: 1.5rem;
 }
 
-/* Card da pesquisa */
 .painel-busca {
   width: 100%;
   max-width: 560px;
@@ -208,7 +200,6 @@ h1 {
   line-height: 1.6;
 }
 
-/* Campo de pesquisa */
 .busca {
   display: flex;
   gap: 0.65rem;
@@ -239,7 +230,6 @@ h1 {
   box-shadow: 0 0 0 3px rgba(137, 87, 229, 0.18);
 }
 
-/* Botão */
 .busca button {
   padding: 0.85rem 1.25rem;
   font-size: 0.95rem;
@@ -271,7 +261,6 @@ h1 {
   outline-offset: 3px;
 }
 
-/* Mensagens de estado */
 .status {
   display: flex;
   align-items: center;
@@ -317,7 +306,6 @@ h1 {
   }
 }
 
-/* Card do perfil encontrado */
 .card {
   display: flex;
   align-items: flex-start;
@@ -390,7 +378,6 @@ h1 {
   text-decoration: underline;
 }
 
-/* Celulares */
 @media (max-width: 480px) {
   .pagina {
     padding: 1.25rem 1rem;
